@@ -100,6 +100,7 @@ class BrazeClient(object):
         self.api_key = api_key
         self.api_url = api_url or DEFAULT_API_URL
         self.session = requests.Session()
+        self.session.headers.update({'User-Agent': 'braze-client python'})
         self.request_url = ""
 
     def user_track(self, attributes=None, events=None, purchases=None):
